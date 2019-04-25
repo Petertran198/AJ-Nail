@@ -3,11 +3,27 @@
 
 // Configure Slider
     $('.carousel').carousel({
-      interval: 3000,
+      interval: 4500,
       pause: 'hover'
     });
 
-    
+//Index customer reward button
+var rewardBtn = document.getElementById("rewardBtn");
+rewardBtn.addEventListener("click",function(){
+  var overlay = document.getElementById("overlay");
+  var popup = document.getElementById("popup");
+  overlay.style.display = "block";
+  popup.style.display = "block";
+});
+
+var closeBtn = document.getElementById('closeBtn');
+closeBtn.addEventListener("click",function(){
+  var overlay = document.getElementById("overlay");
+  var popup = document.getElementById("popup");
+  overlay.style.display = "none";
+  popup.style.display = "none";
+
+});    
 
 // Video Play
     $(function () {
