@@ -7,6 +7,44 @@
       pause: 'hover'
     });
 
+// fade in for carousel 
+var fades = document.getElementsByClassName('fade-in');
+
+function fadeIn(){
+  for(var i = 0; i< fades.length; i++){
+    fades[i].classList.remove("hide");  
+    fades[i].classList.add("animated");
+    fades[i].classList.add("delay-.5s");    
+    fades[i].classList.add("rollIn");
+  }
+}
+setTimeout(fadeIn, 350);
+
+// Icon pop up
+var iconFade1 = document.querySelector('.icon-fade-in-1');
+var iconFade2 = document.querySelector('.icon-fade-in-2');
+var iconFade3 = document.querySelector('.icon-fade-in-3');
+
+function iconFadeIn1(){
+    iconFade1.classList.remove("hide");  
+    iconFade1.classList.add("show");
+}
+setTimeout(iconFadeIn1, 1550);
+
+
+function iconFadeIn2(){
+    iconFade2.classList.remove("hide");  
+    iconFade2.classList.add("show");
+}
+setTimeout(iconFadeIn2, 1760);
+
+
+function iconFadeIn3(){
+    iconFade3.classList.remove("hide");  
+    iconFade3.classList.add("show");
+}
+setTimeout(iconFadeIn3, 1960);
+
 //Index customer reward button
 var rewardBtn = document.getElementById("rewardBtn");
 rewardBtn.addEventListener("click",function(){
@@ -38,5 +76,5 @@ closeBtn.addEventListener("click",function(){
         });
       });
     });
-// grid
-   baguetteBox.run('.grid-gallery', { animation: 'slideIn'});
+
+ 
