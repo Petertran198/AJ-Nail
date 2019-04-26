@@ -77,4 +77,8 @@ closeBtn.addEventListener("click",function(){
       });
     });
 
- 
+    $('.slider').slick({
+      infinite: true,
+      slideToShow: 1,
+      slideToScroll: 1
+    }); 
