@@ -193,3 +193,13 @@ font-family: 'Lato', sans-serif;
     height: 100%;
     min-width: 100%;
 }
+#map{
+  min-width: 100%;
+  margin: 0;
+}
+
+.contact-icon{
+  font-size: 2rem;
+  text-shadow: 1px 2px 1px #ccc;
+
+}
