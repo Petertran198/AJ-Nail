@@ -10,6 +10,27 @@
 // fade in for carousel 
 var fades = document.getElementsByClassName('fade-in');
 
+// Lightbox Init
+$(document).on('click', '[data-toggle="lightbox"]', function (event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});
+
+// Video Play
+$(function () {
+  // Auto play modal video
+  $(".video").click(function () {
+    var theModal = $(this).data("target"),
+      videoSRC = $(this).attr("data-video"),
+      videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+    $(theModal + ' iframe').attr('src', videoSRCauto);
+    $(theModal + ' button.close').click(function () {
+      $(theModal + ' iframe').attr('src', videoSRC);
+    });
+  });
+});
+
+
 function fadeIn(){
   for(var i = 0; i< fades.length; i++){
     fades[i].classList.remove("hide");  
@@ -63,22 +84,4 @@ closeBtn.addEventListener("click",function(){
 
 });    
 
-// Video Play
-    $(function () {
-      // Auto play modal video
-      $(".video").click(function () {
-        var theModal = $(this).data("target"),
-          videoSRC = $(this).attr("data-video"),
-          videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
-        $(theModal + ' iframe').attr('src', videoSRCauto);
-        $(theModal + ' button.close').click(function () {
-          $(theModal + ' iframe').attr('src', videoSRC);
-        });
-      });
-    });
 
-    $('.slider').slick({
-      infinite: true,
-      slideToShow: 1,
-      slideToScroll: 1
-    }); 
